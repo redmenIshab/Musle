@@ -61,7 +61,7 @@ export default class Login extends Component {
       Alert.alert("Fields cannot be empty!");
       return;
     }
-    // navigation.navigate('Home')
+    navigation.navigate("Home");
   };
   render() {
     return (
