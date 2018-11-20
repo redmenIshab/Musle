@@ -3,6 +3,7 @@ import {
   View, TouchableOpacity, Image, StyleSheet,
 } from 'react-native';
 import { MyText } from '.';
+import images from '../image';
 
 const styles = StyleSheet.create({
   container: {
