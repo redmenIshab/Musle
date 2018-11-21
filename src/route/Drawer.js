@@ -135,9 +135,9 @@ export default class Drawer extends Component {
             onPress={this.handleHome}
           />
           <DrawerLabel
-            icon={Images.aboutUs}
-            title="About Us"
-            // onPress={() => navigation.navigate('AboutUs')}
+            icon={Images.user}
+            title="Profile"
+            onPress={() => navigation.navigate("Profile")}
           />
 
           <DrawerLabel

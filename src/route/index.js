@@ -10,6 +10,8 @@ import { TouchableOpacity, Image, Dimensions } from "react-native";
 import React from "react";
 import image from "../image";
 import Drawer from "./Drawer";
+import { ProfileScreen } from "../container/Profile";
+
 const Dashboard = createStackNavigator(
   {
     Home: {
@@ -44,6 +46,12 @@ const Dashboard = createStackNavigator(
           />
         )
       })
+    },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        title: "Profile"
+      }
     }
   },
   {
