@@ -1,7 +1,8 @@
 import {
   createStackNavigator,
   createSwitchNavigator,
-  createDrawerNavigator
+  createDrawerNavigator,
+  createBottomTabNavigator
 } from "react-navigation";
 import { LoginScreen } from "../container/Auth";
 import { HomeScreen } from "../container/Home";
@@ -12,10 +13,46 @@ import image from "../image";
 import Drawer from "./Drawer";
 import { ProfileScreen } from "../container/Profile";
 
-const Dashboard = createStackNavigator(
+const TabNavigator = createBottomTabNavigator(
   {
     Home: {
       screen: HomeScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => {
+          return (
+            <Image
+              source={image.home}
+              color={tintColor}
+              style={{ tintColor }}
+            />
+          );
+        }
+      }
+    },
+    Profile: {
+      screen: ProfileScreen,
+      navigationOptions: {
+        tabBarIcon: ({ tintColor }) => {
+          return (
+            <Image
+              source={image.user}
+              style={{ tintColor, width: 20, height: 20 }}
+            />
+          );
+        }
+      }
+    }
+  },
+  {
+    tabBarOptions: {
+      activeTintColor: PRIMARY_COLOR
+    }
+  }
+);
+const Dashboard = createStackNavigator(
+  {
+    Home: {
+      screen: TabNavigator,
       navigationOptions: ({ navigation }) => ({
         headerLeft: (
           <TouchableOpacity
@@ -48,7 +85,7 @@ const Dashboard = createStackNavigator(
       })
     },
     Profile: {
-      screen: ProfileScreen,
+      screen: TabNavigator,
       navigationOptions: {
         title: "Profile"
       }
