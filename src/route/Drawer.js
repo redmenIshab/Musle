@@ -157,7 +157,6 @@ export default class Drawer extends Component {
         </ScrollView>
         <View style={styles.footerStyle}>
           <MyText style={[styles.profileMyTextStyle, { color: PRIMARY_COLOR }]}>
-            {" "}
             Musle || Share Smile
           </MyText>
         </View>
